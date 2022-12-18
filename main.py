@@ -5,8 +5,11 @@ import nltk
 from utils import preprocess, predict
 
 # for NLP requirement
-nltk.download('punkt')
-nltk.download("stopwords")
+try:
+    nltk.download('punkt')
+    nltk.download('stopwords')
+except:
+    pass
 
 
 def click_callback():
