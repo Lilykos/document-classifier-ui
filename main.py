@@ -10,6 +10,10 @@ nltk.download("stopwords")
 
 
 def click_callback():
+    """
+    Callback function for the button. It differentiates between the
+    2 options of text and file, and does some sanity checks.
+    """
     if txt_input:
         result = predict(
             preprocess(txt_input, do_stop, do_stem, do_punct, do_single)
@@ -23,7 +27,6 @@ def click_callback():
             )
         else:
             result = "Please provide a text file (.txt)."
-
     if txt_input and uploaded_file:
         result = "Please select one of the two data input options. " \
                  "Maybe there is leftover text in the `Text Input` section? We are working on it!"
